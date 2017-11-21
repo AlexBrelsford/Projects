@@ -1,0 +1,329 @@
+import java.util.*;
+/**
+* THIS IS NOT DONE! 
+*This will help you calculate your grade. 
+ * Method class that will have 4 methods
+ * 	 * Method 1: toString
+	 			*basic tostring to print 
+	 * Method 2: Percentage 
+	 			* Will ask for what each category percent is 	
+	 * Method 3: grade calculator
+	 			*will calculate grade 
+	 * Method 4: Final (test) grade tester
+	 			*will give an aproxamate grade you need to get grade you want
+	 			*will ask for grade you want
+	 			*
+ * @author Alex
+ *@version 11/21
+ *
+ */
+public class GradeCalculator
+{
+	//Fields
+		private double grade1;//for grades about hw
+		private double grade2;//Tests
+		private double grade3;//Projects/Papers
+		private double grade4;//Participation
+		private double percent;//for percentages
+		private double finalGrade;//for final grade
+		
+	//Constructors
+		/**
+		 * Basic default constructor. Sets all fields to 0
+		 */
+		public GradeCalculator()
+		{
+			
+			grade1 = 0;
+			grade2 = 0;
+			grade3 = 0;
+			grade4 = 0;
+			percent = 0.0;
+			finalGrade = 0;
+			
+		}
+		/**
+		 * 
+		 * @param grade1
+		 * @param grade2
+		 * @param grade3
+		 * @param grade4
+		 */
+		public GradeCalculator(double grade1,double grade2,double grade3,double grade4)
+		{
+			this.grade1 = grade1; 
+			this.grade2 = grade2; 
+			this.grade3 = grade3;
+			this.grade4 = grade4; 
+		}
+		/**
+		 * 
+		 * @param percent
+		 * @param finalGrade
+		 */
+		public GradeCalculator(double percent,double finalGrade) 
+		{
+			this.percent = percent; 
+			this.finalGrade = finalGrade;
+		}
+		/**
+		 * 
+		 * @param grade1
+		 * @param grade2
+		 * @param grade3
+		 * @param grade4
+		 * @param percent
+		 * @param finalGrade
+		 */
+		public GradeCalculator(double grade1,double grade2,double grade3, double grade4, double percent,double finalGrade) 
+		{
+			this.grade1 = grade1; 
+			this.grade2 = grade2; 
+			this.grade3 = grade3;
+			this.grade4 = grade4; 
+			this.percent = percent; 
+			this.finalGrade = finalGrade;
+		}
+		//getters
+		
+	/**
+		 * @return the grade1
+		 */
+		public double getGrade1() {
+			return grade1;
+		}
+		/**
+		 * @return the grade2
+		 */
+		public double getGrade2() {
+			return grade2;
+		}
+		/**
+		 * @return the grade3
+		 */
+		public double getGrade3() {
+			return grade3;
+		}
+		/**
+		 * @return the grade4
+		 */
+		public double getGrade4() {
+			return grade4;
+		}
+		/**
+		 * @return the percent
+		 */
+		public double getPercent() {
+			return percent;
+		}
+		/**
+		 * @return the finalGrade
+		 */
+		public double getFinalGrade() {
+			return finalGrade;
+		}
+		/**
+		 * @param grade1 the grade1 to set
+		 */
+		public void setGrade1(double grade1) {
+			this.grade1 = grade1;
+		}
+		/**
+		 * @param grade2 the grade2 to set
+		 */
+		public void setGrade2(double grade2) {
+			this.grade2 = grade2;
+		}
+		/**
+		 * @param grade3 the grade3 to set
+		 */
+		public void setGrade3(double grade3) {
+			this.grade3 = grade3;
+		}
+		/**
+		 * @param grade4 the grade4 to set
+		 */
+		public void setGrade4(double grade4) {
+			this.grade4 = grade4;
+		}
+		/**
+		 * @param percent the percent to set
+		 */
+		public void setPercent(double percent) {
+			this.percent = percent;
+		}
+		/**
+		 * @param finalGrade the finalGrade to set
+		 */
+		public void setFinalGrade(double finalGrade) {
+			this.finalGrade = finalGrade;
+		}
+		//Method 1
+		//Method 2
+		/**
+		 * This is a percentage void method. this will have user input. 
+		 * @param user to be set as percents
+		 */
+		public void percentageCategory() 
+		{
+			
+			/**
+			 * telling user about what it needs
+			 * 
+			 */
+			System.out.println("Hello User. I will need some things. I will ask what percent of your grade is _____ category. You will respond with ");
+			System.out.println("the precentage as decimals. Example: 30% = .30 and so on");
+			System.out.println("What percent of your grade is Homework?");
+			Scanner scan = new Scanner(System.in);
+			grade1 = scan.nextDouble();//setting user input to grade 1
+			System.out.println("What percent of your grade is Tests(including midterms and finals. Add up the percents)?");
+			grade2 = scan.nextDouble();//setting user input to grade 2
+			System.out.println("What percent of your grade is Projects/Papers?");
+			grade3 = scan.nextDouble();;//setting user input to grade 3
+			System.out.println("What percent of your grade is Participation?");
+			grade4 = scan.nextDouble();//setting user input to grade 4
+			
+		}
+	//Method 3
+		/**
+		 * Grade Calculator
+		 *  will calculate grade. using userr inpput
+		 */
+		public void gradeCalculations()
+		{
+			Scanner scan3 = new Scanner(System.in);
+			//variables needed
+			 double homeworks = 0;
+			 double Tests = 0;
+			 double project = 0;
+			 double participation = 0;
+			 double sum = 0;
+			 
+			 int count = 0;
+			 System.out.println("Getting Average of all Homeworks.");
+			System.out.println("How many homeworks have you had so far?");
+			count = scan3.nextInt();
+			for(int i = 0; i<count;i++)
+			{
+				System.out.println("Enter grade "+ i);
+				double fill =  scan3.nextDouble();
+				sum = sum + fill;
+				
+				
+			}
+			homeworks = sum/count;
+			count = 0;
+			sum = 0;
+			
+			 System.out.println("Getting Average of all Tests.");
+			System.out.println("How many Tests have you had so far?");
+			count = scan3.nextInt();
+			for(int i = 0; i<count;i++)
+			{
+				System.out.println("Enter grade "+ i);
+				double fill =  scan3.nextDouble();
+				sum = sum + fill;
+				
+				
+			}
+			Tests = sum/count;
+			
+			count = 0;
+			sum = 0;
+			
+			 System.out.println("Getting Average of all Papers or Projects.");
+			System.out.println("How many Papers or Projects have you had so far?");
+			count = scan3.nextInt();
+			for(int i = 0; i<count;i++)
+			{
+				System.out.println("Enter grade "+ i);
+				double fill =  scan3.nextDouble();
+				sum = sum + fill;
+				
+				
+			}
+			project = sum/count;
+			System.out.println("What do you think is your Participation grade?");
+			participation = scan3.nextDouble();
+			
+			finalGrade = (homeworks * grade1)+ (Tests * grade2)+ (project * grade3)+ (participation * grade4);
+			/**Printing out /testing if works*/
+			System.out.println(homeworks + " Homework Average.");
+			System.out.println(Tests + " Test Average.");
+			System.out.println(project + " all Papers or Projects Average.");
+			System.out.println( " Final Grade is :" + finalGrade );
+		}
+	//Method 4
+		/**
+		 * 	 * Method 4: Final (test) grade tester
+	 			*will give an aproxamate # of points  you need to get grade you want
+	 			*will ask for grade you want
+	 			*@param double , int
+		 */
+		public void FinalGrade()
+		{
+			
+			
+			System.out.println("What grade would you like?");
+			
+			Scanner scan = new Scanner(System.in);
+			
+			double userWanted = scan.nextDouble(); //sets grade to what final grade the person wants. 
+			
+			if(finalGrade < userWanted)
+			{
+				
+
+				
+				/**
+				 * 	grade1;//for grades about hw
+				 *  grade2;//Tests
+				 *  grade3;//Projects/Papers
+				 *  grade4;//Participation
+				 */
+				//How much of your grade is the final?
+				System.out.println("What percent of your grade is the final?");
+				
+				double percentofFinal = scan.nextDouble(); //sets grade to what final grade the person wants. 
+				
+				percentofFinal = percentofFinal/100;
+				
+				double y = 45;//y is the points you will need
+				
+				System.out.println("we will start at the final's grade at a 45");
+				
+				double help = 0;
+				/**
+				 * help is the potential grade you need on the final
+				 */
+				while(y != 100)//for grade
+				{
+					
+				
+					
+					help = finalGrade + (y * percentofFinal);
+					System.out.println("With your final's grade at a " + y + " you would get an " + help);
+					if(help != userWanted)
+					{
+						
+						System.out.println(help + " is NOT the grade you want. ");
+						
+					}
+					else
+					{
+						
+						System.out.println(y + " is the grade you need! Congrats!");
+						
+					}
+					y++;
+					
+					
+					
+				}	
+
+				
+			}
+					
+			
+		}
+}
